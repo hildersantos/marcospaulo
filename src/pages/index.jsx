@@ -1,23 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
-import { Parallax } from 'react-spring/renderprops-addons.cjs'
+import React from 'react';
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
+import { Parallax } from 'react-spring/renderprops-addons.cjs';
 
 // Components
-import Layout from '../components/Layout'
-import ProjectCard from '../components/ProjectCard'
+import Layout from '../components/Layout';
+import ProjectCard from '../components/ProjectCard';
 
 // Elements
-import Inner from '../elements/Inner'
-import { Title, BigTitle, Subtitle } from '../elements/Titles'
+import Inner from '../elements/Inner';
+import { Title, BigTitle, Subtitle } from '../elements/Titles';
 
 // Views
-import Hero from '../views/Hero'
-import Projects from '../views/Projects'
-import About from '../views/About'
-import Contact from '../views/Contact'
+import Hero from '../views/Hero';
+import Projects from '../views/Projects';
+import About from '../views/About';
+import Contact from '../views/Contact';
 
-import avatar from '../images/avatar.jpg'
+import avatar from '../images/avatar.jpg';
+import manleisanteoni from '../images/manlei-santeoni.jpeg';
+import livromp from '../images/livro-mp.jpg';
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
@@ -31,31 +33,31 @@ const ProjectsWrapper = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 2rem;
   }
-`
+`;
 
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
-`
+`;
 
 const Avatar = styled.img`
   ${tw`rounded-full w-32 xl:w-48 shadow-lg h-auto`};
-`
+`;
 
 const AboutSub = styled.span`
   ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
-`
+`;
 
 const AboutDesc = styled.p`
   ${tw`text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify`};
-`
+`;
 
 const ContactText = styled.p`
   ${tw`text-grey-light font-sans text-xl md:text-2xl lg:text-3xl`};
-`
+`;
 
 const Footer = styled.footer`
   ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
-`
+`;
 
 const Index = () => (
   <>
@@ -63,28 +65,38 @@ const Index = () => (
     <Parallax pages={5}>
       <Hero offset={0}>
         <BigTitle>
-          Hello, <br /> I'm John Doe.
+          Olá, <br /> sou Marcos Paulo.
         </BigTitle>
-        <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+        <Subtitle>
+          Sou um designer de Salvador - BA e me interesso por desenvolvimento
+          web.
+        </Subtitle>
       </Hero>
       <Projects offset={1}>
-        <Title>Projects</Title>
+        <Title>Projetos</Title>
         <ProjectsWrapper>
           <ProjectCard
-            title="Freiheit"
+            title="Manlei Santeoni"
             link="https://www.behance.net/gallery/58937147/Freiheit"
-            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-          >
-            This project is my entry to Adobe's #ChallengeYourPerspective contest.
-          </ProjectCard>
-          <ProjectCard
-            title="Harry Potter"
-            link="https://www.behance.net/gallery/52915793/Harry-Potter"
             bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
+            img={manleisanteoni}
           >
-            I entered the DOCMA 2017 award with this Harry Potter inspired image.
+            Marca criada para o professor de inglês Manlei Santeoni.
+            <br />
+            Os elementos escolhidos foram baseados na sabedoria (coruja),
+            meditação (posição da lótus) e livro (conhecimento).
           </ProjectCard>
+
           <ProjectCard
+            title="Livro - De Aluno a Professor"
+            link="https://www.behance.net/gallery/52915793/Harry-Potter"
+            bg="linear-gradient(to right, #8A2387 0%, #E94057 100%)"
+            img={livromp}
+          >
+            Design de capa e contracapa do livro "De Aluno a Professor", do
+            professor de inglês Manlei Santeoni.
+          </ProjectCard>
+          {/* <ProjectCard
             title="Tomb Raider"
             link="https://www.behance.net/gallery/43907099/Tomb-Raider"
             bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
@@ -97,43 +109,50 @@ const Index = () => (
             bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
           >
             A fantasy image manipulation relocating the habitat of wild animals.
-          </ProjectCard>
+          </ProjectCard> */}
         </ProjectsWrapper>
       </Projects>
       <About offset={3}>
-        <Title>About</Title>
+        <Title>Sobre</Title>
         <AboutHero>
-          <Avatar src={avatar} alt="John Doe" />
+          <Avatar src={avatar} alt="Marcos Paulo" />
           <AboutSub>
-            The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face.
+            Crio conceitos gráficos há 2 anos. Por isso, me interesso por design
+            gráfico e de interação, e meu objetivo é transmitir boas
+            experiências com o meu trabalho.
           </AboutSub>
         </AboutHero>
         <AboutDesc>
-          You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
-          every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
-          make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The kids
-          want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that all
-          right?
+          Minha história com o design começa em 2017, com a criação de{' '}
+          <em>flyers</em> para divulgação dos produtos de uma loja de
+          eletrônicos que trabalhava. A partir daí não parei mais: procurei me
+          aprofundar em Corel Draw/Illustrator e nos conceitos de design (como
+          tipografia, cores, etc).
+          <br />
+          Continuo estudando e aprendendo mais a cada dia e atualmente tenho me
+          interessado por desenvolvimento web e na criação de experiências de
+          usuário únicas.
         </AboutDesc>
       </About>
       <Contact offset={4}>
         <Inner>
-          <Title>Get in touch</Title>
+          <Title>Entre em contato</Title>
           <ContactText>
-            Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
-            <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a>
+            Me mande um <a href="mailto:plizNoSp4m@domain.tld">email</a> ou me
+            encontre no{' '}
+            <a href="https://twitter.com/marcospaulompbs">Twitter</a>.
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2019 by Gatsby Starter Portfolio Cara.{' '}
-          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Github Repository</a>. Made by{' '}
-          <a href="https://www.lekoarts.de">LekoArts</a>.
+          &copy; 2019 por Marcos Paulo Bispo. Tema por{' '}
+          <a href="https://www.lekoarts.de" target="_blank" rel="nofollow">
+            LekoArts
+          </a>
+          .
         </Footer>
       </Contact>
     </Parallax>
   </>
-)
+);
 
-export default Index
+export default Index;
